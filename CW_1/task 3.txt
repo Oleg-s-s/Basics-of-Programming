@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int n;
+	int* arr;
+	int max;
+	float arihmetic_mean=0;
+	cout << "Input n:";
+	cin >> n;
+
+	arr = new int[n];
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+		arihmetic_mean += arr[i];
+		if (i == 0) {
+			max = arr[0];
+		}
+		if (max < arr[i]) {
+			max = arr[i];
+		}
+	}
+	arihmetic_mean = arihmetic_mean / n;
+	for (int i = 0; i < n; i++) {
+		if (arr[i] > arihmetic_mean&& arr[i] < max) {
+			cout << arr[i] << ' ';
+		}
+	}
+	cout << '\n';
+	system("pause");
+	return 0;
+}

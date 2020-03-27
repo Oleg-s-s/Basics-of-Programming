@@ -1,0 +1,38 @@
+#include <iostream>
+#include "math.h"
+using namespace std;
+
+long double fact(int N)
+{
+    if (N < 0)
+        return 0;
+    if (N == 0)
+        return 1; 
+    else 
+        return N * fact(N - 1); 
+}
+double mucos(double x, double e = 0.000001) {
+    int k = -1, n = 2;
+    double xn = x * x, sum = 0, a = 1;
+    do {
+        sum += a;
+        a = (k * xn) / fact(n);
+        n += 2;
+        k = -k;
+        xn *= x * x;
+
+    } while (fabs(a) > e);
+    return sum;
+}
+
+int main()
+{
+    int n;
+    double mult = 1;
+    cin >> n;
+    for (int i = 1; i < n; i++) {
+        mult *= mucos(i);
+    }
+    cout<<mult;
+    return 0;
+}

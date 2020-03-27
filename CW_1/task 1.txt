@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n,a = 0,b = 0,c = 0;
+    cout<<"input number"<<endl;
+    cin>>n;
+    a = n%10;
+    while (n>100){
+        n/=10;
+    }
+    b = n%10;
+        while (n>10){
+        n/=10;
+        }
+        c = n%10;
+    if (a<b && a<c){
+        cout<<c<<b<<a<<endl;
+    }
+    if (b<a){
+        cout<<c<<a<<b<<endl;
+    }
+    else if (c<a){
+        cout<<a<<b<<c<<endl;
+    }
+    return 0;
+}
