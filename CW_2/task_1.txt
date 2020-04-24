@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main() {
+    int* arr = new int[100];
+    int n,a;
+    cout << "Lenght:";
+    cin >> n;
+    cout << "Array:";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    for (int i = 0; i < n/2; i++)
+    {
+        
+
+        
+          if (arr[i] % 2 == 0)
+          {
+            a = arr[n - i - 1];
+            arr[n - i - 1] = arr[i];
+            arr[i] = a;
+          }  
+    }
+        
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
